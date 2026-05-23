@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WealthPortal - Dashboard</title>
+    <link rel="manifest" href="manifest.json">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body class="bg-[#131313] text-white">
+    <!-- Konten index.html ini merepresentasikan layar Dashboard -->
+    <header class="sticky top-0 z-40 bg-[#131313]/80 backdrop-blur-xl border-b border-white/10 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#00d2ff] to-[#0066ff]"></div>
+            <h1 class="font-bold text-xl tracking-tight text-[#00d2ff]">WealthPortal</h1>
+        </div>
+        <span class="material-symbols-outlined text-[#00d2ff]">notifications</span>
+    </header>
+
+    <main class="px-6 py-8 pb-32 space-y-8">
+        <!-- Total Aset Card -->
+        <section class="glass-card p-6 relative overflow-hidden">
+            <div class="relative z-10">
+                <p class="text-white/60 text-sm uppercase tracking-widest mb-1">Total Nilai Aset</p>
+                <h2 class="text-3xl font-bold mb-4">$1,284,592.42</h2>
+                <div class="flex items-center gap-2 text-xs">
+                    <span class="bg-[#00d2ff]/20 text-[#00d2ff] px-2 py-1 rounded-full flex items-center">
+                        <span class="material-symbols-outlined text-xs mr-1">trending_up</span> +12.4%
+                    </span>
+                    <span class="text-white/40">vs bulan lalu</span>
+                </div>
+            </div>
+            <span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl text-white/5 opacity-10">account_balance_wallet</span>
+        </section>
+
+        <!-- Ringkasan Grid -->
+        <div class="grid grid-cols-2 gap-4">
+            <div class="glass-card p-4">
+                <p class="text-white/60 text-xs mb-1">Pemasukan</p>
+                <p class="text-xl font-bold">$48,200</p>
+                <p class="text-[10px] text-green-400 mt-1">↑ 8%</p>
+            </div>
+            <div class="glass-card p-4">
+                <p class="text-white/60 text-xs mb-1">Pengeluaran</p>
+                <p class="text-xl font-bold">$12,450</p>
+                <p class="text-[10px] text-red-400 mt-1">↓ 3%</p>
+            </div>
+        </div>
+        
+        <!-- Tambahkan navigasi atau komponen lainnya di sini -->
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] rounded-full bg-[#1c1b1b]/60 backdrop-blur-2xl border border-white/15 p-2 flex justify-around items-center z-50 shadow-2xl">
+        <a href="index.html" class="p-3 bg-[#00d2ff]/10 rounded-full text-[#00d2ff]"><span class="material-symbols-outlined">dashboard</span></a>
+        <a href="transaction.html" class="p-3 text-white/60"><span class="material-symbols-outlined">account_balance_wallet</span></a>
+        <a href="stats.html" class="p-3 text-white/60"><span class="material-symbols-outlined">insights</span></a>
+        <a href="profile.html" class="p-3 text-white/60"><span class="material-symbols-outlined">person</span></a>
+    </nav>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+    </script>
+</body>
+</html>
